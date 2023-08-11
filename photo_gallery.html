@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Corcoran Reunion - Photo Gallery</title>
+</head>
+<body>
+<header>
+    <nav>
+        <!-- Add navigation links here -->
+        <a href="index.html">Home</a>
+        <a href="photo_gallery.html">Photo Gallery</a>
+        <a href="news_announcements.html">Announcements</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+<main>
+    <section class="photo-gallery">
+        <h1>Photo Gallery</h1>
+        <div class="gallery-container" id="photo-gallery-container">
+            <!-- JavaScript will populate the images here -->
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-links">
+        <!-- Add footer links here -->
+        <a href="index.html">Home</a>
+        <a href="photo_gallery.html">Photo Gallery</a>
+        <a href="news_announcements.html">Announcements</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <p>&copy; 2023 Corcoran Reunion. All rights reserved.</p>
+</footer>
+
+<!-- Add this div at the bottom of the <body> section -->
+<div class="enlarged-image-container" id="enlarged-image-container">
+    <span class="close-btn" id="close-btn">&times;</span>
+    <img src="" alt="Enlarged Family Reunion Photo" id="enlarged-image">
+</div>
+
+<script>
+    // JavaScript code to dynamically load images from the 'photos' directory
+
+    const galleryContainer = document.getElementById("photo-gallery-container");
+    const enlargedImageContainer = document.getElementById("enlarged-image-container");
+    const enlargedImage = document.getElementById("enlarged-image");
+    const closeBtn = document.getElementById("close-btn");
+
+    // Function to fetch all photos in the 'photos' directory
+    function fetchPhotos() {
+      fetch("photos.json") // Assuming you have a JSON file listing all photos in the 'photos' directory
+        .then(response => response.json())
+        .then(photos => {
+          // Loop through the photos and create image elements dynamically
+          photos.forEach(photo => {
+            const img = document.createElement("img");
+            img.src = photo;
+            img.alt = "Family Reunion Photo";
+            img.addEventListener("click", function () {
+                openEnlarged(this.src);
+            });
+            galleryContainer.appendChild(img);
+          });
+        })
+        .catch(error => console.error("Error fetching photos:", error));
+    }
+
+    // Call the fetchPhotos function to load the images on page load
+    fetchPhotos();
+
+    // Function to open the enlarged image container
+    function openEnlarged(imageSrc) {
+        enlargedImage.src = imageSrc;
+
+        // Limit the size of the enlarged image based on screen dimensions
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        const maxWidth = screenWidth * 1.0; // Limit to 80% of screen width
+        const maxHeight = screenHeight * 1.0; // Limit to 80% of screen height
+
+        // Calculate the aspect ratio of the original image
+        const originalWidth = enlargedImage.naturalWidth;
+        const originalHeight = enlargedImage.naturalHeight;
+        const aspectRatio = originalWidth / originalHeight;
+
+        // Calculate the resized dimensions to fit within the limits
+        let newWidth, newHeight;
+        if (originalWidth > maxWidth) {
+            newWidth = maxWidth;
+            newHeight = newWidth / aspectRatio;
+        } else if (originalHeight > maxHeight) {
+            newHeight = maxHeight;
+            newWidth = newHeight * aspectRatio;
+        } else {
+            newWidth = originalWidth;
+            newHeight = originalHeight;
+        }
+
+        // Set the dimensions for the enlarged image
+        enlargedImage.style.width = newWidth + "px";
+        enlargedImage.style.height = newHeight + "px";
+
+        // Display the enlarged image container
+        enlargedImageContainer.style.display = "block";
+    }
+
+    // Function to close the enlarged image container
+    function closeEnlarged() {
+        enlargedImageContainer.style.display = "none";
+    }
+
+    // Add event listeners to each thumbnail image
+    const thumbnailImages = galleryContainer.getElementsByTagName("img");
+    for (const img of thumbnailImages) {
+        img.addEventListener("click", function () {
+            console.log("Image clicked:", this.src);
+            openEnlarged(this.src);
+        });
+    }
+
+    // Close button event listener
+    closeBtn.addEventListener("click", closeEnlarged);
+</script>
+
+</body>
+</html>

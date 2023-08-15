@@ -3,14 +3,13 @@
 
   <head>
 
-    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Tooplate">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>ArtXibition HTML Event Template</title>
+    <title>ArtXibition - Tickets Page</title>
 
 
     <!-- Additional CSS Files -->
@@ -28,7 +27,7 @@ Tooplate 2125 ArtXibition
 https://www.tooplate.com/view/2125-artxibition
 
 -->
-  </head>
+    </head>
     
     <body>
     
@@ -45,21 +44,7 @@ https://www.tooplate.com/view/2125-artxibition
     </div>
     <!-- ***** Preloader End ***** -->
     
-    <!-- ***** Pre Header ***** -->
-<!--    <div class="pre-header">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-lg-6 col-sm-6">-->
-<!--                    <span>Hey! The Show is Starting in 15 Days.</span>-->
-<!--                </div>-->
-<!--                <div class="col-lg-6 col-sm-6">-->
-<!--                    <div class="text-button">-->
-<!--                        <a href="rent-venue.html">Contact Us Now! <i class="fa fa-arrow-right"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!-- ***** Pre Header (removed) ***** -->
     
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
@@ -72,11 +57,11 @@ https://www.tooplate.com/view/2125-artxibition
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="rent-venue.html">Rent Venue</a></li>
                             <li><a href="shows-events.html">Shows & Events</a></li> 
-                            <li><a href="tickets.html">Tickets</a></li> 
+                            <li><a href="tickets.html" class="active">Tickets</a></li> 
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -89,231 +74,209 @@ https://www.tooplate.com/view/2125-artxibition
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <!-- ***** Pre Header (removed) ***** -->
-
-    <!-- ***** Main Banner Area Start ***** -->
-    <div class="main-banner">
-        <div class="counter-content">
-            <ul>
-                <li>Days<span id="days"></span></li>
-                <li>Hours<span id="hours"></span></li>
-                <li>Minutes<span id="minutes"></span></li>
-                <li>Seconds<span id="seconds"></span></li>
-            </ul>
-        </div>
+    <!-- ***** About Us Page ***** -->
+    <div class="page-heading-shows-events">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="main-content">
-                        <h6>Date TBD</h6>
-                        <h2>The Corcoran Family Reunion 2027</h2>
-                        <div class="main-white-button">
-                            <a href="ticket-details.html">Purchase Tickets</a>
-                        </div>
-                    </div>
+                    <h2>Tickets On Sale Now!</h2>
+                    <span>Check out upcoming and past shows & events and grab your ticket right now.</span>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ***** Main Banner Area End ***** -->
 
-    <!-- *** Owl Carousel Items ***-->
-    <div class="show-events-carousel">
+    <div class="tickets-page">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="owl-show-events owl-carousel">
-                        <div class="item">
-                            <a href="event-details.html"><img src="photos/CFR_007.jpeg" alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="event-details.html"><img src="photos/CFR_008.jpeg" alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="event-details.html"><img src="photos/CFR_009.jpeg" alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="event-details.html"><img src="photos/CFR_010.jpeg" alt=""></a>
-                        </div>
+                    <div class="search-box">
+                        <form id="subscribe" action="" method="get">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="search-heading">
+                                        <h4>Sort The Upcoming Shows & Events By:</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <select value="month">
+                                                <option value="month">Month</option>
+                                                <option name="June" id="June">June</option>
+                                                <option name="July" id="July">July</option>
+                                                <option name="August" id="August">August</option>
+                                                <option name="September" id="September">September</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <select value="location">
+                                                <option value="location">Location</option>
+                                                <option name="Brazil" id="Brazil">Brazil</option>
+                                                <option name="Europe" id="Europe">Europe</option>
+                                                <option name="US" id="US">US</option>
+                                                <option name="Asia" id="Asia">Asia</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <select value="month">
+                                                <option value="month">Price</option>
+                                                <option name="min" id="min">$0 - $50</option>
+                                                <option name="standard" id="standard">$50 - $100</option>
+                                                <option name="hight" id="hight">$100 - $200</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <fieldset>
+                                            <button type="submit" id="form-submit" class="main-dark-button">Submit</button>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <!-- *** Amazing Venus ***-->
-    <div class="amazing-venues">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9">
-                    <div class="left-content">
-                        <h4>Three Amazing Venues for events</h4>
-                        <p>ArtXibition Event Template is brought to you by Tooplate website and it included total 7 HTML pages. 
-                        These are <a href="index.html">Homepage</a>, <a href="about.html">About</a>, 
-                        <a href="rent-venue.html">Rent a venue</a>, <a href="shows-events.html">shows &amp; events</a>, 
-                        <a href="event-details.html">event details</a>, <a href="tickets.html">tickets</a>, and <a href="ticket-details.html">ticket details</a>. 
-                        You can feel free to modify any page as you like. If you have any question, please visit our <a href="https://www.tooplate.com/contact" target="_blank">Contact page</a>.</p>
-                        <br>
-                        <p>You can use this event template for your commercial or business website. You are not permitted to redistribute this template ZIP file on any template download website. If you need the latest HTML templates, you may visit <a href="https://www.toocss.com/" target="_blank">Too CSS</a> website that features a great collection of templates in different categories.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="right-content">
-                        <h5><i class="fa fa-map-marker"></i> Visit Us</h5>
-                        <span>5 College St NW, <br>Norcross, GA 30071<br>United States</span>
-                        <div class="text-button"><a href="show-events-details.html">Need Directions? <i class="fa fa-arrow-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- *** Map ***-->
-    <div class="map-image">
-        <img src="assets/images/map-image.jpg" alt="Maps of 3 Venues">
-    </div>
-
-
-    <!-- *** Venues & Tickets ***-->
-    <div class="venue-tickets">
-        <div class="container-fluid">
-            <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-heading">
-                        <h2>Our Venues & Tickets</h2>
+                    <div class="heading">
+                        <h2>Tickets Page</h2>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="venue-item">
+                    <div class="ticket-item">
                         <div class="thumb">
-                            <img src="assets/images/venue-01.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <div class="left-content">
-                                <div class="main-white-button">
-                                    <a href="ticket-details.html">Purchase Tickets</a>
-                                </div>
+                            <img src="assets/images/ticket-01.jpg" alt="">
+                            <div class="price">
+                                <span>1 ticket<br>from <em>$25</em></span>
                             </div>
-                            <div class="right-content">
-                                <h4>Radio City Musical Hall</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.</p>
-                                <ul>
-                                    <li><i class="fa fa-sitemap"></i>250</li>
-                                    <li><i class="fa fa-user"></i>500</li>
-                                </ul>
-                                <div class="price">
-                                    <span>1 ticket<br>from <em>$45</em></span>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="venue-item">
-                        <div class="thumb">
-                            <img src="assets/images/venue-02.jpg" alt="">
                         </div>
                         <div class="down-content">
-                            <div class="left-content">
-                                <div class="main-white-button">
-                                    <a href="ticket-details.html">Purchase Tickets</a>
-                                </div>
+                            <span>There Are 150 Tickets Left For This Show</span>
+                            <h4>Wonderful Festival</h4>
+                            <ul>
+                                <li><i class="fa fa-clock-o"></i> Thursday: 05:00 PM to 10:00 PM</li>
+                                <li><i class="fa fa-map-marker"></i>908 Copacabana Beach, Rio de Janeiro</li>
+                            </ul>
+                            <div class="main-dark-button">
+                                <a href="ticket-details.html">Purchase Tickets</a>
                             </div>
-                            <div class="right-content">
-                                <h4>Madison Square Garden</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.</p>
-                                <ul>
-                                    <li><i class="fa fa-sitemap"></i>450</li>
-                                    <li><i class="fa fa-user"></i>650</li>
-                                </ul>
-                                <div class="price">
-                                    <span>1 ticket<br>from <em>$55</em></span>
-                                </div>
-                            </div> 
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="venue-item">
+                    <div class="ticket-item">
                         <div class="thumb">
-                            <img src="assets/images/venue-03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <div class="left-content">
-                                <div class="main-white-button">
-                                    <a href="ticket-details.html">Purchase Tickets</a>
-                                </div>
+                            <img src="assets/images/ticket-02.jpg" alt="">
+                            <div class="price">
+                                <span>1 ticket<br>from <em>$45</em></span>
                             </div>
-                            <div class="right-content">
-                                <h4>Royce Hall</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.</p>
-                                <ul>
-                                    <li><i class="fa fa-sitemap"></i>450</li>
-                                    <li><i class="fa fa-user"></i>750</li>
-                                </ul>
-                                <div class="price">
-                                    <span>1 ticket<br>from <em>$65</em></span>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- *** Coming Events ***-->
-    <div class="coming-events">
-        <div class="left-button">
-            <div class="main-white-button">
-                <a href="shows-events.html">Discover More</a>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="event-item">
-                        <div class="thumb">
-                            <a href="event-details.html"><img src="assets/images/event-01.jpg" alt=""></a>
                         </div>
                         <div class="down-content">
-                            <a href="event-details.html"><h4>Radio City Musical Hall</h4></a>
+                            <span>There Are 200 Tickets Left For This Show</span>
+                            <h4>Golden Festival</h4>
                             <ul>
-                                <li><i class="fa fa-clock-o"></i> Tuesday: 15:30-19:30</li>
-                                <li><i class="fa fa-map-marker"></i> Copacabana Beach, Rio de Janeiro</li>
+                                <li><i class="fa fa-clock-o"></i> Sunday: 06:00 PM to 09:00 PM</li>
+                                <li><i class="fa fa-map-marker"></i>789 Copacabana Beach, Rio de Janeiro</li>
                             </ul>
+                            <div class="main-dark-button">
+                                <a href="ticket-details.html">Purchase Tickets</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="event-item">
+                    <div class="ticket-item">
                         <div class="thumb">
-                            <a href="event-details.html"><img src="assets/images/event-02.jpg" alt=""></a>
+                            <img src="assets/images/ticket-03.jpg" alt="">
+                            <div class="price">
+                                <span>1 ticket<br>from <em>$65</em></span>
+                            </div>
                         </div>
                         <div class="down-content">
-                            <a href="event-details.html"><h4>Madison Square Garden</h4></a>
+                            <span>There Are 260 Tickets Left For This Show</span>
+                            <h4>Water Splash Festival</h4>
                             <ul>
-                                <li><i class="fa fa-clock-o"></i> Wednesday: 08:00-14:00</li>
-                                <li><i class="fa fa-map-marker"></i> Copacabana Beach, Rio de Janeiro</li>
+                                <li><i class="fa fa-clock-o"></i> Tuesday: 07:00 PM to 11:00 PM</li>
+                                <li><i class="fa fa-map-marker"></i>456 Copacabana Beach, Rio de Janeiro</li>
                             </ul>
+                            <div class="main-dark-button">
+                                <a href="ticket-details.html">Purchase Tickets</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="event-item">
+                    <div class="ticket-item">
                         <div class="thumb">
-                            <a href="event-details.html"><img src="assets/images/event-03.jpg" alt=""></a>
+                            <img src="assets/images/ticket-04.jpg" alt="">
+                            <div class="price">
+                                <span>1 ticket<br>from <em>$20</em></span>
+                            </div>
                         </div>
                         <div class="down-content">
-                            <a href="event-details.html"><h4>Royce Hall</h4></a>
+                            <span>There Are 340 Tickets Left For This Show</span>
+                            <h4>Tiger Festival</h4>
                             <ul>
-                                <li><i class="fa fa-clock-o"></i> Thursday: 09:00-23:00</li>
-                                <li><i class="fa fa-map-marker"></i> Copacabana Beach, Rio de Janeiro</li>
+                                <li><i class="fa fa-clock-o"></i> Thursday: 06:40 PM to 11:40 PM</li>
+                                <li><i class="fa fa-map-marker"></i>123 Copacabana Beach, Rio de Janeiro</li>
                             </ul>
+                            <div class="main-dark-button">
+                                <a href="ticket-details.html">Purchase Tickets</a>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ticket-item">
+                        <div class="thumb">
+                            <img src="assets/images/ticket-05.jpg" alt="">
+                            <div class="price">
+                                <span>1 ticket<br>from <em>$30</em></span>
+                            </div>
+                        </div>
+                        <div class="down-content">
+                            <span>There Are 420 Tickets Left For This Show</span>
+                            <h4>Woodland Festival</h4>
+                            <ul>
+                                <li><i class="fa fa-clock-o"></i> Wednesday: 06:00 PM to 09:00 PM</li>
+                                <li><i class="fa fa-map-marker"></i>1122 Copacabana Beach, Rio de Janeiro</li>
+                            </ul>
+                            <div class="main-dark-button">
+                                <a href="ticket-details.html">Purchase Tickets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ticket-item">
+                        <div class="thumb">
+                            <img src="assets/images/ticket-06.jpg" alt="">
+                            <div class="price">
+                                <span>1 ticket<br>from <em>$40</em></span>
+                            </div>
+                        </div>
+                        <div class="down-content">
+                            <span>There Are 520 Tickets Left For This Show</span>
+                            <h4>Winter Festival</h4>
+                            <ul>
+                                <li><i class="fa fa-clock-o"></i> Saturday: 06:00 PM to 09:00 PM</li>
+                                <li><i class="fa fa-map-marker"></i>220 Copacabana Beach, Rio de Janeiro</li>
+                            </ul>
+                            <div class="main-dark-button">
+                                <a href="ticket-details.html">Purchase Tickets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="pagination">
+                        <ul>
+                            <li><a href="#">Prev</a></li>
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">Next</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -383,10 +346,10 @@ https://www.tooplate.com/view/2125-artxibition
                 <div class="col-lg-12">
                     <div class="under-footer">
                         <div class="row">
-                            <div class="col-lg-6 col-sm-6">
+                            <div class="col-lg-6">
                                 <p>São Conrado, Rio de Janeiro</p>
                             </div>
-                            <div class="col-lg-6 col-sm-6">
+                            <div class="col-lg-6">
                                 <p class="copyright">Copyright 2021 ArtXibition Company 
                     
                     			<br>Design: <a rel="nofollow" href="https://www.tooplate.com" target="_parent">Tooplate</a></p>

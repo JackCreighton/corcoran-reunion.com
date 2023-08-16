@@ -264,7 +264,7 @@ header
   right: 0px;
   z-index: 100;
   height: 80px;
-  background: #fff;
+  background:  #658354;
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
@@ -290,7 +290,7 @@ header
 
 .header-area .main-nav .logo em {
   font-style: normal;
-  color: #009900;
+  color: #dcdcdc;
   font-weight: 900;
 }
 

@@ -92,7 +92,7 @@
                                 <img src="photos/CFR_001.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_001.jpg">View more</a>
+                                    <a href="photos/CFR_001.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -101,7 +101,7 @@
                                 <img src="photos/CFR_002.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_002.jpg">View more</a>
+                                    <a href="photos/CFR_002.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -110,7 +110,7 @@
                                 <img src="photos/CFR_003.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_003.jpg">View more</a>
+                                    <a href="photos/CFR_003.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -119,7 +119,7 @@
                                 <img src="photos/CFR_004.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_004.jpg">View more</a>
+                                    <a href="photos/CFR_004.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -128,7 +128,7 @@
                                 <img src="photos/CFR_005.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_005.jpg">View more</a>
+                                    <a href="photos/CFR_005.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -137,7 +137,7 @@
                                 <img src="photos/CFR_006.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_006.jpg">View more</a>
+                                    <a href="photos/CFR_006.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -146,7 +146,7 @@
                                 <img src="photos/CFR_007.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_007.jpg">View more</a>
+                                    <a href="photos/CFR_007.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -155,7 +155,7 @@
                                 <img src="photos/CFR_008.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_008.jpg">View more</a>
+                                    <a href="photos/CFR_008.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -164,7 +164,7 @@
                                 <img src="photos/CFR_009.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_009.jpg">View more</a>
+                                    <a href="photos/CFR_009.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -173,7 +173,7 @@
                                 <img src="photos/CFR_010.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_010.jpg">View more</a>
+                                    <a href="photos/CFR_010.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -182,7 +182,7 @@
                                 <img src="photos/CFR_011.jpeg" alt="Image" class="img-fluid tm-img">
                                 <figcaption>
                                     <p class="tm-figure-description">Click to Expand</p>
-                                    <a href="photos/CFR_011.jpg">View more</a>
+                                    <a href="photos/CFR_011.jpeg">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
@@ -293,137 +293,137 @@
 
 <script>
 
-            function adjustHeightOfPage(pageNo) {
+    function adjustHeightOfPage(pageNo) {
 
-                var offset = 80;
-                var pageContentHeight = 0;
+        var offset = 80;
+        var pageContentHeight = 0;
 
-                var pageType = $('div[data-page-no="' + pageNo + '"]').data("page-type");
+        var pageType = $('div[data-page-no="' + pageNo + '"]').data("page-type");
 
-                if( pageType != undefined && pageType == "gallery") {
-                    pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .tm-img-gallery-container").height();
-                }
-                else {
-                    pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .js-tm-page-content").height() + 20;
-                }
+        if( pageType != undefined && pageType == "gallery") {
+            pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .tm-img-gallery-container").height();
+        }
+        else {
+            pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .js-tm-page-content").height() + 20;
+        }
 
-                if($(window).width() >= 992) { offset = 120; }
-                else if($(window).width() < 480) { offset = 40; }
+        if($(window).width() >= 992) { offset = 120; }
+        else if($(window).width() < 480) { offset = 40; }
 
-                // Get the page height
-                var totalPageHeight = $('.cd-slider-nav').height()
-                                        + pageContentHeight + offset
-                                        + $('.tm-footer').height();
+        // Get the page height
+        var totalPageHeight = $('.cd-slider-nav').height()
+                                + pageContentHeight + offset
+                                + $('.tm-footer').height();
 
-                // Adjust layout based on page height and window height
-                if(totalPageHeight > $(window).height())
-                {
-                    $('.cd-hero-slider').addClass('small-screen');
-                    $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", totalPageHeight + "px");
-                }
-                else
-                {
-                    $('.cd-hero-slider').removeClass('small-screen');
-                    $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", "100%");
-                }
-            }
+        // Adjust layout based on page height and window height
+        if(totalPageHeight > $(window).height())
+        {
+            $('.cd-hero-slider').addClass('small-screen');
+            $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", totalPageHeight + "px");
+        }
+        else
+        {
+            $('.cd-hero-slider').removeClass('small-screen');
+            $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", "100%");
+        }
+    }
 
-            /*
-                Everything is loaded including images.
-            */
-            $(window).load(function(){
+    /*
+        Everything is loaded including images.
+    */
+    $(window).load(function(){
 
-                adjustHeightOfPage(1); // Adjust page height
+        adjustHeightOfPage(1); // Adjust page height
 
-                /* Gallery One pop up
-                -----------------------------------------*/
-                $('.gallery-one').magnificPopup({
-                    delegate: 'a', // child items selector, by clicking on it popup will open
-                    type: 'image',
-                    gallery:{enabled:true}
-                });
+        /* Gallery One pop up
+        -----------------------------------------*/
+        $('.gallery-one').magnificPopup({
+            delegate: 'a', // child items selector, by clicking on it popup will open
+            type: 'image',
+            gallery:{enabled:true}
+        });
 
-				/* Gallery Two pop up
-                -----------------------------------------*/
-				$('.gallery-two').magnificPopup({
-                    delegate: 'a',
-                    type: 'image',
-                    gallery:{enabled:true}
-                });
+        /* Gallery Two pop up
+        -----------------------------------------*/
+        $('.gallery-two').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            gallery:{enabled:true}
+        });
 
-                /* Gallery Three pop up
-                -----------------------------------------*/
-                $('.gallery-three').magnificPopup({
-                    delegate: 'a',
-                    type: 'image',
-                    gallery:{enabled:true}
-                });
+        /* Gallery Three pop up
+        -----------------------------------------*/
+        $('.gallery-three').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            gallery:{enabled:true}
+        });
 
-                /* Collapse menu after click
-                -----------------------------------------*/
-                $('#tmNavbar a').click(function(){
-                    $('#tmNavbar').collapse('hide');
+        /* Collapse menu after click
+        -----------------------------------------*/
+        $('#tmNavbar a').click(function(){
+            $('#tmNavbar').collapse('hide');
 
-                    adjustHeightOfPage($(this).data("no")); // Adjust page height
-                });
+            adjustHeightOfPage($(this).data("no")); // Adjust page height
+        });
 
-                /* Browser resized
-                -----------------------------------------*/
-                $( window ).resize(function() {
-                    var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
+        /* Browser resized
+        -----------------------------------------*/
+        $( window ).resize(function() {
+            var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
 
-                    // wait 3 seconds
-                    setTimeout(function() {
-                        adjustHeightOfPage( currentPageNo );
-                    }, 1000);
+            // wait 3 seconds
+            setTimeout(function() {
+                adjustHeightOfPage( currentPageNo );
+            }, 1000);
 
-                });
+        });
 
-                // Remove preloader (https://ihatetomatoes.net/create-custom-preloading-screen/)
-                $('body').addClass('loaded');
+        // Remove preloader (https://ihatetomatoes.net/create-custom-preloading-screen/)
+        $('body').addClass('loaded');
 
-            });
+    });
 
-            /* Google map
-            ------------------------------------------------*/
-            var map = '';
-            var center;
+    /* Google map
+    ------------------------------------------------*/
+    var map = '';
+    var center;
 
-            function initialize() {
-                var mapOptions = {
-                    zoom: 14,
-                    center: new google.maps.LatLng(37.769725, -122.462154),
-                    scrollwheel: false
-                };
+    function initialize() {
+        var mapOptions = {
+            zoom: 14,
+            center: new google.maps.LatLng(37.769725, -122.462154),
+            scrollwheel: false
+        };
 
-                map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+        map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
 
-                google.maps.event.addDomListener(map, 'idle', function() {
-                  calculateCenter();
-                });
+        google.maps.event.addDomListener(map, 'idle', function() {
+          calculateCenter();
+        });
 
-                google.maps.event.addDomListener(window, 'resize', function() {
-                  map.setCenter(center);
-                });
-            }
+        google.maps.event.addDomListener(window, 'resize', function() {
+          map.setCenter(center);
+        });
+    }
 
-            function calculateCenter() {
-                center = map.getCenter();
-            }
+    function calculateCenter() {
+        center = map.getCenter();
+    }
 
-            function loadGoogleMap(){
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
-                document.body.appendChild(script);
-            }
+    function loadGoogleMap(){
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
+        document.body.appendChild(script);
+    }
 
-            // DOM is ready
-            $(function() {
-                loadGoogleMap(); // Google Map
-            });
+    // DOM is ready
+    $(function() {
+        loadGoogleMap(); // Google Map
+    });
 
-        </script>
+</script>
 
 </body>
 </html>

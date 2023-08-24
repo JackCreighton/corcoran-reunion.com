@@ -264,7 +264,7 @@ header
   right: 0px;
   z-index: 100;
   height: 80px;
-  background:  #658354;
+  background:  #6c9d6c;
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
@@ -1064,12 +1064,12 @@ footer p.copyright {
 .sub-footer .logo span {
   font-size: 28px;
   font-weight: 800;
-  color: #656c74;
+  color: #000000;
 }
 
 .sub-footer .logo span em {
   font-style: normal;
-  color: #2a2a2a;
+  color: #009900;
 }
 
 .sub-footer .menu {
@@ -1090,34 +1090,6 @@ footer p.copyright {
 .sub-footer .menu ul li a:hover {
   color: #656c74;
 }
-
-.sub-footer .social-links {
-  text-align: right;
-  margin-top: 10px;
-}
-
-.sub-footer .social-links ul li {
-  display: inline-block;
-  margin-left: 5px;
-}
-
-.sub-footer .social-links ul li a {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  text-align: center;
-  line-height: 30px;
-  background-color: #2a2a2a;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 14px;
-  transition: all .3s;
-}
-
-.sub-footer .social-links ul li a:hover {
-  background-color: #656c74;
-}
-
 
 /*
 ---------------------------------------------

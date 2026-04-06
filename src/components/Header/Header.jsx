@@ -1,31 +1,59 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
+  // Handle sticky scroll state
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="header glass-panel">
-      <div className="container header-container">
-        <NavLink to="/" className="logo">
-          Corcoran<span>Reunion</span>
-        </NavLink>
-        
-        <nav className={`nav-menu ${isOpen ? 'active' : ''}`}>
-          <NavLink to="/" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'} onClick={() => setIsOpen(false)}>Home</NavLink>
-          <NavLink to="/photos" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'} onClick={() => setIsOpen(false)}>Photos</NavLink>
-          <NavLink to="/reunion-details" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'} onClick={() => setIsOpen(false)}>Reunion Details</NavLink>
-          <NavLink to="/family-tree" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'} onClick={() => setIsOpen(false)}>Family Tree</NavLink>
-          <NavLink to="/donate" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link btn btn-primary'} onClick={() => setIsOpen(false)}>Donate</NavLink>
-        </nav>
+    <header className={`header-area ${isSticky ? 'header-sticky background-header' : ''}`}>
+      <div className="container">
+        <nav className="main-nav">
+          {/* Logo */}
+          <NavLink to="/" className="logo" onClick={() => setIsOpen(false)}>
+            Corcoran<em>Reunion</em>
+          </NavLink>
+          
+          {/* Menu */}
+          <ul className={`nav ${isOpen ? 'active' : ''}`}>
+            <li>
+              <NavLink to="/" className={({isActive}) => isActive ? 'active' : ''} onClick={() => setIsOpen(false)}>Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/photos" className={({isActive}) => isActive ? 'active' : ''} onClick={() => setIsOpen(false)}>Photos</NavLink>
+            </li>
+            <li>
+              <NavLink to="/reunion-details" className={({isActive}) => isActive ? 'active' : ''} onClick={() => setIsOpen(false)}>Reunion Details</NavLink>
+            </li>
+            <li>
+              <NavLink to="/family-tree" className={({isActive}) => isActive ? 'active' : ''} onClick={() => setIsOpen(false)}>Family Tree</NavLink>
+            </li>
+            <li>
+              <NavLink to="/donate" className={({isActive}) => isActive ? 'active' : ''} onClick={() => setIsOpen(false)}>Donate</NavLink>
+            </li>
+          </ul>
 
-        <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+          {/* Mobile Menu Trigger */}
+          <a className={`menu-trigger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+            <span>Menu</span>
+          </a>
+        </nav>
       </div>
     </header>
   );

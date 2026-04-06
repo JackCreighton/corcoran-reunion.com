@@ -2,18 +2,18 @@
 
 :root {
   /* Colors */
-  --bg-primary: #040606;
-  --bg-secondary: #0a0e0e;
-  --bg-tertiary: #111818;
-  --text-primary: #fefefe;
-  --text-secondary: #85be7e;
+  --bg-primary: #fefefe;
+  --bg-secondary: #f7f7f7;
+  --bg-tertiary: #eeeeee;
+  --text-primary: #040606;
+  --text-secondary: #555555;
   --accent-primary: #f8b33f;
   --accent-secondary: #e09f30;
   --error: #ef4444;
   --success: #85be7e;
 
   /* Gradients */
-  --gradient-main: linear-gradient(135deg, #040606 0%, #0a0e0e 100%);
+  --gradient-main: linear-gradient(135deg, #fefefe 0%, #f7f7f7 100%);
   --gradient-accent: linear-gradient(135deg, #f8b33f 0%, #e09f30 100%);
 
   /* Typography */

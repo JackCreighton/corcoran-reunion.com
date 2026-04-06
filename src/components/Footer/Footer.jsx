@@ -3,25 +3,27 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer>
       <div className="container">
-        <div className="footer-content">
-          <div className="footer-logo">
-            <NavLink to="/" className="logo">
-              Corcoran<span>Reunion</span>
-            </NavLink>
-            <p className="footer-subtitle">Celebrating Family Since Sometime in the 1980s</p>
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="sub-footer">
+              <div className="footer-layout">
+                <div className="footer-logo">
+                  <span className="logo">Corcoran<em>Reunion</em></span>
+                </div>
+                <div className="footer-menu">
+                  <ul>
+                    <li><NavLink to="/" end className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>
+                    <li><NavLink to="/photos" className={({isActive}) => isActive ? 'active' : ''}>Photos</NavLink></li>
+                    <li><NavLink to="/reunion-details" className={({isActive}) => isActive ? 'active' : ''}>Reunion Details</NavLink></li>
+                    <li><NavLink to="/family-tree" className={({isActive}) => isActive ? 'active' : ''}>Family Tree</NavLink></li>
+                    <li><NavLink to="/donate" className={({isActive}) => isActive ? 'active' : ''}>Donate</NavLink></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="footer-links">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/photos">Photos</NavLink>
-            <NavLink to="/reunion-details">Reunion Details</NavLink>
-            <NavLink to="/family-tree">Family Tree</NavLink>
-            <NavLink to="/donate">Donate</NavLink>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Corcoran Family Reunion. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

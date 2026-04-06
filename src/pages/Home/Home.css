@@ -211,12 +211,23 @@
   }
 
   .photos-carousel {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-top: -30px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
   }
   
+  .photos-carousel a {
+    flex: 0 0 75%;
+    scroll-snap-align: center;
+  }
+
   .photos-carousel img {
-    width: 45%;
+    width: 100%;
+    max-width: none;
   }
 
   .about-grid {

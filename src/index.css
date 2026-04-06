@@ -2,19 +2,19 @@
 
 :root {
   /* Colors */
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-tertiary: #334155;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent-primary: #f59e0b; /* Golden amber for that premium vibe */
-  --accent-secondary: #d97706;
+  --bg-primary: #040606;
+  --bg-secondary: #0a0e0e;
+  --bg-tertiary: #111818;
+  --text-primary: #fefefe;
+  --text-secondary: #85be7e;
+  --accent-primary: #f8b33f;
+  --accent-secondary: #e09f30;
   --error: #ef4444;
-  --success: #10b981;
+  --success: #85be7e;
 
   /* Gradients */
-  --gradient-main: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  --gradient-accent: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  --gradient-main: linear-gradient(135deg, #040606 0%, #0a0e0e 100%);
+  --gradient-accent: linear-gradient(135deg, #f8b33f 0%, #e09f30 100%);
 
   /* Typography */
   --font-main: 'Inter', sans-serif;

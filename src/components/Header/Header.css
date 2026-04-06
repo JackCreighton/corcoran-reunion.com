@@ -5,13 +5,13 @@
   right: 0px;
   z-index: 100;
   height: 80px;
-  background: transparent;
+  background: #fefefe;
   transition: all .5s ease 0s;
 }
 
 .header-area.background-header {
   position: fixed;
-  background-color: #fff;
+  background-color: #fefefe;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
 }
 
@@ -24,7 +24,7 @@
 
 .header-area .main-nav .logo {
   line-height: 80px;
-  color: #fff; /* initially white on hero */
+  color: #040606;
   font-size: 28px;
   font-weight: 700;
   transition: all 0.3s ease 0s;
@@ -32,12 +32,12 @@
 }
 
 .header-area.background-header .main-nav .logo {
-  color: #1e1e1e;
+  color: #040606;
 }
 
 .header-area .main-nav .logo em {
   font-style: normal;
-  color: var(--accent-primary);
+  color: #85be7e;
   font-weight: 900;
 }
 
@@ -56,7 +56,7 @@
   display: block;
   font-weight: 500;
   font-size: 14px;
-  color: #fff; /* initially white */
+  color: #040606;
   text-transform: capitalize;
   transition: all 0.3s ease 0s;
   height: 40px;
@@ -65,7 +65,7 @@
 }
 
 .header-area.background-header .main-nav .nav li a {
-  color: #2a2a2a;
+  color: #040606;
 }
 
 .header-area .main-nav .nav li:hover a,
@@ -108,7 +108,7 @@
 .header-area .main-nav .menu-trigger span:before,
 .header-area .main-nav .menu-trigger span:after {
   transition: all 0.4s;
-  background-color: #fff; /* initially white */
+  background-color: #040606;
   display: block;
   position: absolute;
   width: 30px;
@@ -119,7 +119,7 @@
 .header-area.background-header .main-nav .menu-trigger span,
 .header-area.background-header .main-nav .menu-trigger span:before,
 .header-area.background-header .main-nav .menu-trigger span:after {
-  background-color: #1e1e1e;
+  background-color: #040606;
 }
 
 .header-area .main-nav .menu-trigger span {

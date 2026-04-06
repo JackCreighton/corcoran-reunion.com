@@ -1,0 +1,6 @@
+.main-content {
+  flex-grow: 1;
+  padding-top: 5rem; /* Space for the fixed header */
+  position: relative;
+  z-index: 1;
+}

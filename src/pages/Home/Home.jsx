@@ -7,7 +7,7 @@ const Home = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const countDownDate = new Date('Jul 10, 2027 12:00:00').getTime();
+    const countDownDate = new Date('Jul 25, 2027 15:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -38,7 +38,7 @@ const Home = () => {
         <div className="hero-overlay"></div>
         <div className="container hero-container">
           <div className="hero-content">
-            <h6 className="hero-date">Date TBD</h6>
+            <h6 className="hero-date">July 25–30, 2027 • East Gull Lake, MN</h6>
             <h2 className="hero-title">Corcoran Family Reunion</h2>
             <div className="hero-actions">
               <NavLink to="/reunion-details" className="btn btn-primary">
@@ -64,7 +64,7 @@ const Home = () => {
             <h2>A Tradition Spanning Forty Years</h2>
             <p>
               Since sometime in the 1980s, this ragtag group of jokers has been coming together to eat, drink, and be merry.
-              Join us July 99th, 2027, for the greatest family reunion on either side of the Mississippi.
+              Join us July 25–30, 2027, for the greatest family reunion on either side of the Mississippi.
             </p>
             <p>
               See the <NavLink to="/reunion-details" style={{color: 'var(--accent-primary)', textDecoration: 'underline'}}>Reunion Details</NavLink> page for more information.
@@ -73,9 +73,9 @@ const Home = () => {
           <div className="about-location">
             <h3><MapPin size={24} color="#2a2a2a" /> The Destination</h3>
             <p>
-              555 Corcoran St N,<br />
-              TBD, MN 51515<br />
-              United States
+              Cragun's Resort & Hotel<br />
+              11000 Craguns Dr<br />
+              East Gull Lake, MN 56401
             </p>
             <NavLink to="/reunion-details" className="btn-link">
               Need Directions? <ArrowRight size={14} />

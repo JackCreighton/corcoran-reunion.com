@@ -15,6 +15,7 @@ const Photos = () => {
         
         <div className="gallery-header">
           <h2 className="gallery-title">Reunion 2023 <span>Klamath Falls, OR</span></h2>
+          <p className="gallery-subtitle">Memories from our gathering in Klamath Falls • Tap any photo to expand</p>
         </div>
 
         <div className="gallery-grid">
@@ -24,10 +25,10 @@ const Photos = () => {
               className="gallery-item"
               onClick={() => setSelectedPhoto(photoStr)}
             >
-              <img src={photoStr} alt={`Reunion moment ${idx}`} className="gallery-img" />
+              <img src={photoStr} alt={`Reunion moment ${idx + 1}`} className="gallery-img" loading="lazy" />
               <div className="gallery-overlay">
                 <p className="overlay-text">Click to Expand</p>
-                <div className="overlay-subtext">View more</div>
+                <div className="overlay-subtext">View photo</div>
               </div>
             </div>
           ))}
@@ -37,9 +38,9 @@ const Photos = () => {
 
       {/* Lightbox Rendering */}
       {selectedPhoto && (
-        <div className="lightbox" onClick={() => setSelectedPhoto(null)}>
-          <button className="lightbox-close" onClick={() => setSelectedPhoto(null)}>
-            <X size={40} />
+        <div className="lightbox" onClick={() => setSelectedPhoto(null)} role="dialog" aria-modal="true" aria-label="Expanded Photo View">
+          <button className="lightbox-close" onClick={() => setSelectedPhoto(null)} aria-label="Close Photo View">
+            <X size={28} />
           </button>
           {/* Stop propagation so clicking the image doesnt close the lightbox */}
           <img 

@@ -92,6 +92,12 @@ button {
   padding: 0 2rem;
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 /* Glass panel utility */
 .glass-panel {
   background: var(--glass-bg);

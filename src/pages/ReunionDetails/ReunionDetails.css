@@ -338,6 +338,303 @@
   border: none;
 }
 
+/* Family Olympics Schedule Section */
+.olympics-card {
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid var(--accent-primary);
+}
+
+.olympics-header-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.olympics-title-area {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.olympics-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #b45309;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+  flex-shrink: 0;
+}
+
+.olympics-title-area h2 {
+  font-size: 1.75rem;
+  margin: 0 0 0.25rem;
+  color: var(--text-primary);
+}
+
+.olympics-title-area p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.olympics-banner-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.olympics-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+.olympics-pill.gold {
+  background: #fffbeb;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+/* Controls: Filters & Search */
+.olympics-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.day-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.day-tab-btn {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.day-tab-btn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.day-tab-btn.active {
+  background: var(--text-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.olympics-search-box {
+  position: relative;
+  min-width: 260px;
+  flex-shrink: 0;
+}
+
+.olympics-search-box svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.olympics-search-input {
+  width: 100%;
+  padding: 0.55rem 1rem 0.55rem 2.4rem;
+  font-size: 0.875rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.olympics-search-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(248, 179, 63, 0.2);
+}
+
+/* Table Responsive Container */
+.table-responsive-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  background: #ffffff;
+}
+
+.olympics-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 720px;
+}
+
+.olympics-table thead {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.olympics-table th {
+  padding: 1rem 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.olympics-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.15s ease;
+}
+
+.olympics-table tbody tr:hover {
+  background-color: #fbfcfe;
+}
+
+.olympics-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.olympics-table td {
+  padding: 1.1rem 1.25rem;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+/* Event Column */
+.event-cell-name {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.event-cell-notes {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.event-category-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: #eef2ff;
+  color: #4338ca;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Time Cells */
+.time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #1e293b;
+  background: #f1f5f9;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.day-subtext {
+  display: block;
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* Players Required Cell */
+.players-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Location Cell */
+.location-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #334155;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.location-cell svg {
+  color: #85be7e;
+  flex-shrink: 0;
+}
+
+/* Empty State */
+.table-empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--text-secondary);
+}
+
+.table-empty-state svg {
+  margin-bottom: 0.75rem;
+  color: #94a3b8;
+}
+
+.table-empty-state p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
 /* Highlights Pills */
 .resort-perks-grid {
   display: grid;

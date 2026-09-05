@@ -10,15 +10,122 @@ import {
   Plane, 
   Waves, 
   Trees, 
-  Sparkles,
-  Download,
-  Navigation
+  Sparkles, 
+  Download, 
+  Navigation, 
+  Trophy, 
+  Medal, 
+  Users, 
+  Search, 
+  Filter 
 } from 'lucide-react';
 import './ReunionDetails.css';
+
+// Family Olympics Schedule Data
+const OLYMPICS_SCHEDULE = [
+  {
+    id: 'cornhole',
+    dayKey: 'mon',
+    dayLabel: 'Monday, July 26',
+    eventName: 'Cornhole Championship',
+    category: 'Lawn Game',
+    startTime: '10:00 AM',
+    endTime: '11:30 AM',
+    playersRequired: '2 per team (Pairs)',
+    location: 'Main Beach Lawn',
+    notes: 'Double-elimination bracket; boards & bags provided'
+  },
+  {
+    id: 'pontoon-relay',
+    dayKey: 'mon',
+    dayLabel: 'Monday, July 26',
+    eventName: 'Pontoon & Canoe Paddle Relay',
+    category: 'Water Sport',
+    startTime: '2:00 PM',
+    endTime: '3:30 PM',
+    playersRequired: '4 per team',
+    location: 'Resort Marina & Beach',
+    notes: 'Life jackets required; all ages and skill levels'
+  },
+  {
+    id: 'egg-spoon',
+    dayKey: 'tue',
+    dayLabel: 'Tuesday, July 27',
+    eventName: 'The Great Egg & Spoon Obstacle Sprint',
+    category: 'Field Fun',
+    startTime: '10:30 AM',
+    endTime: '11:30 AM',
+    playersRequired: '1 player (Solo / All Ages)',
+    location: 'North Lawn by Lodge',
+    notes: 'Heats broken down by age groups: kids, teens, and adults'
+  },
+  {
+    id: 'pickleball',
+    dayKey: 'tue',
+    dayLabel: 'Tuesday, July 27',
+    eventName: 'Pickleball Doubles Shootout',
+    category: 'Court Sport',
+    startTime: '2:00 PM',
+    endTime: '4:00 PM',
+    playersRequired: '2 per team (Doubles)',
+    location: 'Lakeside Sport Courts',
+    notes: 'Paddles and balls supplied by Cragun’s'
+  },
+  {
+    id: 'water-balloon',
+    dayKey: 'wed',
+    dayLabel: 'Wednesday, July 28',
+    eventName: 'Water Balloon Toss & Catch',
+    category: 'Water Sport',
+    startTime: '11:00 AM',
+    endTime: '12:00 PM',
+    playersRequired: '2 per pair (All Ages)',
+    location: 'Resort Lakeside Green',
+    notes: 'Step back with every successful catch without breaking!'
+  },
+  {
+    id: 'family-trivia',
+    dayKey: 'wed',
+    dayLabel: 'Wednesday, July 28',
+    eventName: 'Corcoran Family History & Trivia Bowl',
+    category: 'Trivia & Fun',
+    startTime: '4:00 PM',
+    endTime: '5:30 PM',
+    playersRequired: '4–6 per team',
+    location: 'Cragun’s Lodge Pavilion',
+    notes: 'Questions about family lore, 1980s trivia, and Minnesota facts'
+  },
+  {
+    id: 'tug-of-war',
+    dayKey: 'thu',
+    dayLabel: 'Thursday, July 29',
+    eventName: 'Tug-of-War Grand Showdown',
+    category: 'Team Sport',
+    startTime: '3:30 PM',
+    endTime: '4:30 PM',
+    playersRequired: '8–10 per team (Open Rosters)',
+    location: 'Beach Volleyball Area',
+    notes: 'Branch vs branch or generations faceoff on soft sand'
+  },
+  {
+    id: 'closing-ceremonies',
+    dayKey: 'thu',
+    dayLabel: 'Thursday, July 29',
+    eventName: 'Olympics Closing Ceremonies & Medal Presentation',
+    category: 'Ceremony',
+    startTime: '7:00 PM',
+    endTime: '8:00 PM',
+    playersRequired: 'All Family Members',
+    location: 'Lakeshore Amphitheater & Firepit',
+    notes: 'Awarding gold, silver, and bronze medals plus spirit honors'
+  }
+];
 
 const ReunionDetails = () => {
   const [copied, setCopied] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [activeDayFilter, setActiveDayFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const venueName = "Cragun's Resort & Hotel";
   const venueAddress = "11000 Craguns Dr, East Gull Lake, MN 56401, US";
@@ -92,6 +199,19 @@ const ReunionDetails = () => {
   };
 
   const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${venueName}, ${venueAddress}`)}`;
+
+  // Filter events based on activeDayFilter and searchQuery
+  const filteredEvents = OLYMPICS_SCHEDULE.filter(event => {
+    const matchesDay = activeDayFilter === 'all' || event.dayKey === activeDayFilter;
+    const query = searchQuery.toLowerCase().trim();
+    const matchesQuery = !query || 
+      event.eventName.toLowerCase().includes(query) ||
+      event.location.toLowerCase().includes(query) ||
+      event.category.toLowerCase().includes(query) ||
+      event.playersRequired.toLowerCase().includes(query);
+
+    return matchesDay && matchesQuery;
+  });
 
   return (
     <div className="reunion-details-page animate-fade-in">
@@ -269,6 +389,148 @@ const ReunionDetails = () => {
                 loading="lazy"
                 allowFullScreen
               ></iframe>
+            </div>
+          </div>
+
+          {/* Family Olympics Schedule Section */}
+          <div className="details-card card-span-12 olympics-card" id="family-olympics-schedule">
+            <div className="olympics-header-banner">
+              <div className="olympics-title-area">
+                <div className="olympics-icon-wrap">
+                  <Trophy size={28} />
+                </div>
+                <div>
+                  <h2>Family Olympics Schedule</h2>
+                  <p>Bragging rights, friendly family rivalry, and medals for all ages</p>
+                </div>
+              </div>
+
+              <div className="olympics-banner-badges">
+                <span className="olympics-pill gold">
+                  <Medal size={14} /> Gold, Silver & Bronze Medals
+                </span>
+                <span className="olympics-pill">
+                  <Users size={14} /> All Generations Welcome
+                </span>
+              </div>
+            </div>
+
+            {/* Controls: Day Filters & Search */}
+            <div className="olympics-controls">
+              <div className="day-filter-tabs" role="tablist" aria-label="Filter events by day">
+                <button 
+                  type="button"
+                  className={`day-tab-btn ${activeDayFilter === 'all' ? 'active' : ''}`}
+                  onClick={() => setActiveDayFilter('all')}
+                  id="tab-all-days"
+                >
+                  All Days ({OLYMPICS_SCHEDULE.length})
+                </button>
+                <button 
+                  type="button"
+                  className={`day-tab-btn ${activeDayFilter === 'mon' ? 'active' : ''}`}
+                  onClick={() => setActiveDayFilter('mon')}
+                  id="tab-mon"
+                >
+                  Mon, Jul 26
+                </button>
+                <button 
+                  type="button"
+                  className={`day-tab-btn ${activeDayFilter === 'tue' ? 'active' : ''}`}
+                  onClick={() => setActiveDayFilter('tue')}
+                  id="tab-tue"
+                >
+                  Tue, Jul 27
+                </button>
+                <button 
+                  type="button"
+                  className={`day-tab-btn ${activeDayFilter === 'wed' ? 'active' : ''}`}
+                  onClick={() => setActiveDayFilter('wed')}
+                  id="tab-wed"
+                >
+                  Wed, Jul 28
+                </button>
+                <button 
+                  type="button"
+                  className={`day-tab-btn ${activeDayFilter === 'thu' ? 'active' : ''}`}
+                  onClick={() => setActiveDayFilter('thu')}
+                  id="tab-thu"
+                >
+                  Thu, Jul 29
+                </button>
+              </div>
+
+              <div className="olympics-search-box">
+                <Search size={16} />
+                <input 
+                  type="text"
+                  placeholder="Search event, location, or player count..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="olympics-search-input"
+                  aria-label="Search Family Olympics events"
+                />
+              </div>
+            </div>
+
+            {/* Responsive Table */}
+            <div className="table-responsive-wrapper">
+              <table className="olympics-table">
+                <thead>
+                  <tr>
+                    <th scope="col" style={{ width: '28%' }}>Event Name</th>
+                    <th scope="col" style={{ width: '15%' }}>Start Time</th>
+                    <th scope="col" style={{ width: '15%' }}>End Time</th>
+                    <th scope="col" style={{ width: '22%' }}>Number of Players Required</th>
+                    <th scope="col" style={{ width: '20%' }}>Location</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredEvents.length > 0 ? (
+                    filteredEvents.map((item) => (
+                      <tr key={item.id}>
+                        <td>
+                          <span className="event-category-tag">{item.category}</span>
+                          <span className="event-cell-name">{item.eventName}</span>
+                          <p className="event-cell-notes">{item.notes}</p>
+                        </td>
+                        <td>
+                          <span className="time-badge">
+                            <Clock size={13} /> {item.startTime}
+                          </span>
+                          <span className="day-subtext">{item.dayLabel}</span>
+                        </td>
+                        <td>
+                          <span className="time-badge">
+                            <Clock size={13} /> {item.endTime}
+                          </span>
+                          <span className="day-subtext">{item.dayLabel}</span>
+                        </td>
+                        <td>
+                          <span className="players-badge">
+                            <Users size={14} /> {item.playersRequired}
+                          </span>
+                        </td>
+                        <td>
+                          <div className="location-cell">
+                            <MapPin size={16} />
+                            <span>{item.location}</span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan={5}>
+                        <div className="table-empty-state">
+                          <Search size={32} />
+                          <p>No events found matching "{searchQuery}". Try selecting "All Days" or clearing your search.</p>
+                        </div>
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
             </div>
           </div>
 

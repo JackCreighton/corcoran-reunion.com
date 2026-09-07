@@ -101,7 +101,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 16px;
+  border-radius: 8px;
   padding: 1.25rem 2rem;
   display: inline-flex;
   flex-direction: column;
@@ -162,7 +162,7 @@
 /* Cards */
 .details-card {
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.07);
   padding: 2.25rem;
@@ -203,7 +203,7 @@
 .card-icon-wrap {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
+  border-radius: 6px;
   background: #f0f7ef;
   color: #4a8044;
   display: flex;
@@ -233,7 +233,7 @@
 .dates-highlight-box {
   background: #f8faf9;
   border: 1px solid #e1e9e3;
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 1.5rem;
   display: flex;
   align-items: center;
@@ -325,7 +325,7 @@
 .map-frame-wrapper {
   width: 100%;
   height: 260px;
-  border-radius: 12px;
+  border-radius: 6px;
   overflow: hidden;
   border: 1px solid #e3e3e3;
   margin-top: 1rem;
@@ -365,7 +365,7 @@
 .olympics-icon-wrap {
   width: 54px;
   height: 54px;
-  border-radius: 14px;
+  border-radius: 8px;
   background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
   color: #b45309;
   display: flex;
@@ -488,7 +488,7 @@
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border-radius: 12px;
+  border-radius: 6px;
   border: 1px solid #e2e8f0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   background: #ffffff;
@@ -648,7 +648,7 @@
   gap: 0.9rem;
   background: #f9fbf9;
   border: 1px solid #eef2ee;
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 1rem;
 }
 
@@ -694,7 +694,7 @@
 .travel-item-icon {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 6px;
   background: #f4f6f8;
   color: #4b5563;
   display: flex;
@@ -720,7 +720,7 @@
 .stay-tuned-banner {
   background: linear-gradient(135deg, #fbf8f2 0%, #f7f3eb 100%);
   border: 1px solid #ecdcc4;
-  border-radius: 16px;
+  border-radius: 8px;
   padding: 2rem 2.5rem;
   display: flex;
   align-items: center;
@@ -738,7 +738,7 @@
 .stay-tuned-icon {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
+  border-radius: 6px;
   background: #fdf1dc;
   color: #d97706;
   display: flex;
